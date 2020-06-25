@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         body: SafeArea(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CircleAvatar(
               backgroundImage: AssetImage('images/profile.jpg'),
@@ -34,36 +35,45 @@ class MyApp extends StatelessWidget {
                   color: Colors.grey[100],
                   fontStyle: FontStyle.italic),
             ),
-            Container(
+            SizedBox(
+              height: 20,
+              width: 180,
+              child: Divider(color: Colors.teal.shade50),
+            ),
+            Card(
               color: Colors.white,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.contact_phone,
-                    size: 30,
-                    color: Colors.teal,
-                  ),
-                  SizedBox(width: 10,),
-                  Text('+40746262265')
-                ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.contact_phone,
+                  size: 30,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  '+40746262265',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MuseoModerno'),
+                ),
               ),
             ),
-            Container(
+            Card(
               color: Colors.white,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-              padding: EdgeInsets.all(10),
-              child: Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    size: 30,
-                      color: Colors.teal,
-                  ),
-                  SizedBox(width: 10),
-                  Text('adi.badarau@yahoo.com')
-                ],
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  size: 30,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  'adi.badarau@yahoo.com',
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'MuseoModerno'),
+                ),
               ),
             )
           ],
